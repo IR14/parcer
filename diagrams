@@ -71,3 +71,12 @@ for i, p in enumerate(wedges):
     kw["arrowprops"].update({"connectionstyle": connectionstyle})
     ax.annotate(facultets[i], xy=(x, y), xytext=(1.35*np.sign(x), 1.4*y),
                 horizontalalignment=horizontalalignment, **kw)
+
+# ПИРОГ ФАКУЛЬТЕТОВ
+facultets = "МИЭМ", "ФКН", "Экономика", "Бизнес && Менеджмент", "Математика"
+counts = [3550, 4774, 5016, 2447, 466]
+explode = (0, 0, 0.1, 0, 0)
+
+fig1, ax1 = plt.subplots()
+ax1.pie(counts, explode=explode, labels=facultets, autopct='%1.1f%%', startangle=90, counterclock = False)
+ax1.axis('equal')
