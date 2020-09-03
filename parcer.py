@@ -312,3 +312,9 @@ def parcer(df, group, person, name, info, link, contact, mail, google, tag, pass
 global_data = []
 for i in (miem, cs, eco, math, physic):
     global_data.append(parcer(i, group, person, name, info, link, contact, mail, google, tag, passion))
+    
+pd.DataFrame(global_data[0][0]).to_csv('miem.csv', encoding = 'windows-1251', index = False)
+pd.DataFrame(global_data[1][0]).to_csv('cs.csv', encoding = 'windows-1251', index = False)
+pd.DataFrame(global_data[2][0]).to_csv('eco.csv', encoding = 'windows-1251', index = False)
+pd.DataFrame(global_data[3][0]).to_csv('math.csv', encoding = 'windows-1251', index = False)
+pd.DataFrame(global_data[4][0]).to_csv('physic.csv', encoding = 'windows-1251', index = False)
